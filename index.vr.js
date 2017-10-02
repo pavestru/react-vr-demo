@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-vr';
 
-export default class react_vr_demo extends React.Component {
+export default class ReactVRDemo extends React.Component {
   render() {
     return (
       <View>
@@ -31,4 +31,4 @@ export default class react_vr_demo extends React.Component {
   }
 };
 
-AppRegistry.registerComponent('react_vr_demo', () => react_vr_demo);
+AppRegistry.registerComponent('react-vr-demo', () => ReactVRDemo);

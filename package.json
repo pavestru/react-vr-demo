@@ -1,6 +1,7 @@
 {
-  "name": "react_vr_demo",
+  "name": "react-vr-demo",
   "version": "0.0.1",
+  "homepage": "https://pavestru.github.io/react-vr-demo",
   "private": true,
   "scripts": {
     "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
