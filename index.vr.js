@@ -11,7 +11,7 @@ export default class react_vr_demo extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>
+        <Pano source={asset('terrace-pano.jpg')}/>
         <Text
           style={{
             backgroundColor: '#777879',
