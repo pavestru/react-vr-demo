@@ -2,32 +2,36 @@ import React from 'react';
 import {
   AppRegistry,
   asset,
-  Pano,
   Text,
   View,
+  LiveEnvCamera,
 } from 'react-vr';
 
+import DefaultScene from './scenes/DefaultScene';
+import ChessWorldScene from './scenes/ChessWorldScene';
+import LiveEnvScene from './scenes/LiveEnvScene';
+
 export default class ReactVRDemo extends React.Component {
-  render() {
-    return (
-      <View>
-        <Pano source={asset('terrace-pano.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
-          }}>
-          hello
-        </Text>
-      </View>
+  constructor(state) {
+    super(state);
+    this.state = {
+      scene: 'default',
+    };
+  }
+  switchScene = (scene) => {
+    this.setState(
+      state => ({ scene })
     );
+  }
+  render() {
+    switch (this.state.scene) {
+      case 'live':
+        return <LiveEnvScene onSwitchScene={this.switchScene} />;
+      case 'chess':
+        return <ChessWorldScene onSwitchScene={this.switchScene} />;
+      default:
+        return <DefaultScene onSwitchScene={this.switchScene} />;
+    }
   }
 };
 
